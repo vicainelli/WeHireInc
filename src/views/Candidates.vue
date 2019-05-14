@@ -1,21 +1,28 @@
 <template>
   <div class="home">
-    <h1>Candidates</h1>
-    <ul>
-      <li v-for="candidate in candidates" :key="candidate.id">
-        {{ candidate.acf.name }}
-        {{ candidate.acf.lastName }} -
-        {{ candidate.acf.phoneNumber }}
-      </li>
-    </ul>
+    <page-header :data="{ title: 'Candidates' }" />
+    <person-card
+      v-for="candidate in candidates"
+      :key="candidate.id"
+      :person="{
+        name: `${candidate.acf.name} ${candidate.acf.lastName}`,
+        phone: candidate.acf.phoneNumber
+      }"
+    />
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+import PersonCard from '@/components/PersonCard.vue'
+import PageHeader from '@/components/PageHeader.vue'
 
 export default {
   name: 'Candidates',
+  components: {
+    'person-card': PersonCard,
+    'page-header': PageHeader
+  },
   data() {
     return {
       candidates: null
