@@ -17,6 +17,23 @@ export default new Router({
       path: '/candidates',
       name: 'candidates',
       component: () => import('./views/Candidates.vue')
+    },
+    {
+      path: '/candidates/:id',
+      name: 'candidate',
+      props: true,
+      component: () => import('./views/Candidate.vue')
+    },
+    {
+      path: '/interviewers',
+      name: 'interviewers',
+      component: () => import('./views/Interviewers.vue')
+    },
+    {
+      path: '/interviewers/:id',
+      name: 'interviewer',
+      props: true,
+      component: () => import('./views/Interviewer.vue')
     }
   ]
 })

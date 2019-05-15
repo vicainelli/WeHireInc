@@ -1,5 +1,15 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
+    <ul>
+      <li>
+        <router-link to="/candidates">Candidates</router-link>
+      </li>
+      <li>
+        <router-link to="/interviewers">Interviewers</router-link>
+      </li>
+      <li>
+        <router-link to="/interviews">Interviews</router-link>
+      </li>
+    </ul>
   </div>
 </template>

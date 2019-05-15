@@ -4,9 +4,11 @@
     <person-card
       v-for="candidate in candidates"
       :key="candidate.id"
+      type="candidates"
       :person="{
         name: `${candidate.acf.name} ${candidate.acf.lastName}`,
-        phone: candidate.acf.phoneNumber
+        phone: candidate.acf.phoneNumber,
+        id: candidate.id
       }"
     />
   </div>
